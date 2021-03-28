@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>data-fragmentation</artifactId>
+    <artifactId>read-write-separation</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -69,5 +69,4 @@
             <artifactId>sharding-jdbc-spring-boot-starter</artifactId>
         </dependency>
     </dependencies>
-
 </project>
