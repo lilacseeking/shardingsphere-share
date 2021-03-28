@@ -109,4 +109,35 @@ Sharding-JDBC的核心功能为数据分片和读写分离，通过Sharding-JDBC
 
 ## 2.2 Sharding-JDBC快速入门
 
-实例工程：
+demo地址：https://github.com/lilacseeking/shardingsphere-share.git
+
+数据分片：
+
+```properties
+
+spring.shardingsphere.datasource.names=d-sharding-master-0,d-sharding-master-1
+
+spring.shardingsphere.datasource.d-sharding-master-0.type=org.apache.commons.dbcp2.BasicDataSource
+spring.shardingsphere.datasource.d-sharding-master-0.driver-class-name=com.mysql.jdbc.Driver
+spring.shardingsphere.datasource.d-sharding-master-0.url=jdbc:mysql://localhost:3306/d-sharding-master-0
+spring.shardingsphere.datasource.d-sharding-master-0.username=root
+spring.shardingsphere.datasource.d-sharding-master-0.password=root
+
+spring.shardingsphere.datasource.d-sharding-master-1.type=org.apache.commons.dbcp2.BasicDataSource
+spring.shardingsphere.datasource.d-sharding-master-1.driver-class-name=com.mysql.jdbc.Driver
+spring.shardingsphere.datasource.d-sharding-master-1.url=jdbc:mysql://localhost:3306/d-sharding-master-1
+spring.shardingsphere.datasource.d-sharding-master-1.username=root
+spring.shardingsphere.datasource.d-sharding-master-1.password=root
+
+spring.shardingsphere.sharding.default-database-strategy.inline.sharding-column=data_id
+spring.shardingsphere.sharding.default-database-strategy.inline.algorithm-expression=d-sharding-master-$->{data_id % 2}
+
+spring.shardingsphere.sharding.tables.t_share_order_info.actual-data-nodes=d-sharding-master-$->{0..1}.t_share_order_info_$->{0..1}
+spring.shardingsphere.sharding.tables.t_share_order_info.table-strategy.inline.sharding-column=table_id
+spring.shardingsphere.sharding.tables.t_share_order_info.table-strategy.inline.algorithm-expression=t_share_order_info_$->{table_id % 2}
+
+spring.shardingsphere.props.sql.show = true
+```
+
+读写分离
+

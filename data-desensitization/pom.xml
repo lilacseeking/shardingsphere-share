@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>data-fragmentation</artifactId>
+    <artifactId>data-desensitization</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -70,5 +70,4 @@
             <version>4.0.0-RC1</version>
         </dependency>
     </dependencies>
-
 </project>

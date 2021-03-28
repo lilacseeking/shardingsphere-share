@@ -25,6 +25,6 @@ public interface OrderService {
      * 获取用户信息
      * @return
      */
-    ShareOrderInfoPO getOrderInfo(ShareOrderInfoPO userDTO);
+    ShareOrderInfoPO getOrderInfo(ShareOrderInfoPO shareOrderInfoPO);
 
 }
