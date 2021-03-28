@@ -1,0 +1,5 @@
+.idea
+/common/target/
+/data-fragmentation/target/
+/distributed-governance/target/
+/distributed-transaction/target/
