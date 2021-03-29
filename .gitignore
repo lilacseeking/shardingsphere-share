@@ -1,6 +1,7 @@
 .idea
 /common/target/
 /data-fragmentation/target/
-data-desensitization
+/data-desensitization/target/
 /distributed-governance/target/
 /distributed-transaction/target/
+/read-write-separation/target/
